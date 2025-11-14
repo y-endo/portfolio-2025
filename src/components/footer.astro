@@ -1,0 +1,51 @@
+---
+/**
+ * Footer
+ * フッターを表示するコンポーネント
+ */
+---
+
+<footer class="bg-gray-900">
+  <div class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
+    <div class="absolute end-4 top-4 sm:end-6 sm:top-6 lg:end-8 lg:top-8">
+      <a
+        class="js-anchor-link inline-block rounded-full bg-gray-700 p-3 text-teal-300 shadow-sm transition hover:bg-gray-600"
+        href="#MainContent"
+        aria-label="ページトップへ戻る"
+      >
+        <span class="sr-only">ページトップに戻る</span>
+
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 20 20" fill="currentColor">
+          <path
+            fill-rule="evenodd"
+            d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </a>
+    </div>
+
+    <div class="lg:flex lg:items-end lg:justify-between">
+      <img src="/assets/images/logo.svg" alt="Yuki Endo Portfolio" class="mx-auto w-[150px] invert lg:mx-0" />
+
+      <nav aria-label="サイト内ナビゲーション">
+        <ul class="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:mt-0 lg:justify-end lg:gap-12">
+          <li>
+            <a class="js-anchor-link text-white transition hover:text-white/75" href="#AboutMe"> 私について </a>
+          </li>
+
+          <li>
+            <a class="js-anchor-link text-white transition hover:text-white/75" href="#Career"> 経歴 </a>
+          </li>
+
+          <li>
+            <a class="js-anchor-link text-white transition hover:text-white/75" href="#Skills"> スキル </a>
+          </li>
+
+          <li>
+            <a class="js-anchor-link text-white transition hover:text-white/75" href="#Works"> 制作実績 </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</footer>

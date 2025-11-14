@@ -1,0 +1,25 @@
+---
+import Footer from '@/components/footer.astro';
+import Header from '@/components/header.astro';
+
+import '../styles/global.css';
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <slot name="head" />
+  </head>
+  <body>
+    <a
+      href="#MainContent"
+      class="js-anchor-link sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:rounded focus:bg-white focus:px-4 focus:py-2 focus:text-black"
+    >
+      メインコンテンツへスキップ
+    </a>
+    <Header />
+    <slot />
+    <!-- アクセシビリティを考慮したコンポーネントのパターン集を作成し、それをポートフォリオに乗せる -->
+    <Footer />
+  </body>
+</html>

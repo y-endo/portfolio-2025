@@ -1,0 +1,50 @@
+@import 'tailwindcss';
+
+@theme {
+  /* カスタムフォント */
+  --font-orbitron: 'Orbitron', sans-serif;
+
+  /* アニメーション */
+  --anim-scroll-guide: scroll-guide 1.5s infinite;
+}
+
+/* カスタムスタイル */
+@layer base {
+  html {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    scroll-behavior: smooth;
+    line-height: 1.7;
+
+    @apply antialiased;
+  }
+}
+
+/* カスタムコンポーネント */
+@layer components {
+  /* .btn {
+    @apply px-4 py-2 rounded font-medium transition-colors;
+  }
+
+  .btn-primary {
+    @apply bg-brand-500 text-white hover:bg-brand-600;
+  } */
+}
+
+/* カスタムユーティリティ */
+@layer utilities {
+  /* .text-balance {
+    text-wrap: balance;
+  } */
+}
+
+/* アニメーション */
+@keyframes scroll-guide {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(1.5rem);
+    opacity: 0;
+  }
+}
