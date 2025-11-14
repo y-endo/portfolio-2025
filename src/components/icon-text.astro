@@ -1,0 +1,15 @@
+---
+/**
+ * IconText
+ * アイコン付きテキストコンポーネント
+ */
+
+const { iconSrc, text } = Astro.props;
+---
+
+<div class="flex items-center gap-x-3">
+  <div class="flex h-10 w-10 shrink-0 items-center justify-center">
+    <img src={iconSrc} alt="" class="h-full w-full object-contain" />
+  </div>
+  <span class="text-xl font-medium">{text}</span>
+</div>

@@ -1,0 +1,22 @@
+---
+/**
+ * Heading
+ * 見出しコンポーネント
+ */
+
+const { as, level, className } = Astro.props;
+
+const sizeMap = {
+  1: 'text-4xl',
+  2: 'text-3xl',
+  3: 'text-xl',
+  4: 'text-lg',
+  5: 'text-base',
+};
+
+const TagName = as || `h${level}`;
+
+const classNames = ['font-bold', 'leading-[1.1]', sizeMap[level] ?? 'text-base', className].filter(Boolean);
+---
+
+<TagName class:list={classNames}><slot /></TagName>

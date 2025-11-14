@@ -1,0 +1,255 @@
+---
+import Card from '@/components/card.astro';
+import Head from '@/components/head.astro';
+import Heading from '@/components/heading.astro';
+import IconText from '@/components/icon-text.astro';
+import TimelineItem from '@/components/timeline-item.astro';
+import Layout from '@/layouts/Layout.astro';
+import { SITE_NAME, SITE_URL } from '@/modules/constants';
+
+const headItems = {
+  title: SITE_NAME,
+  description: 'フロントエンドエンジニア Yuki Endo のポートフォリオサイト。プロフィールや制作実績を紹介します。',
+  url: SITE_URL,
+};
+---
+
+<Layout>
+  <Fragment slot="head">
+    <Head {...headItems} />
+  </Fragment>
+  <main id="MainContent">
+    <section class="relative h-[600px] sm:h-screen">
+      <div
+        class="absolute z-0 flex h-full w-full shrink grow flex-col items-center justify-center bg-[rgba(0,0,0,0.25)]"
+      >
+        <div
+          class="font-orbitron w-full max-w-7xl px-5 text-white text-shadow-[0_0_2px_rgba(0,0,0,0.9),0_0_5px_rgba(0,0,0,0.7),0_0_8px_rgba(0,0,0,0.8)]"
+        >
+          <h1 class="text-[3.5rem] leading-none font-bold lg:text-[5.5rem]">Yuki Endo</h1>
+          <p class="mt-1 text-[1.3rem] font-bold lg:text-[2rem]">Frontend Developer</p>
+          <p class="mt-2 font-bold">
+            <span class="pr-1 text-3xl text-cyan-400">11 +</span> Years of Experience
+          </p>
+          <p class="mt-8">A man who commutes two hours from Sayama to Azabu.</p>
+        </div>
+      </div>
+      <div class="absolute bottom-12 left-1/2 -translate-x-1/2">
+        <div class="animate-(--anim-scroll-guide)">
+          <img src="/assets/images/icon-arrow.svg" alt="" class="h-auto w-12 rotate-90 invert" />
+        </div>
+      </div>
+      <div class="js-main-visual absolute z-[-1] h-full w-full overflow-hidden"></div>
+    </section>
+    <section id="AboutMe">
+      <div class="mx-auto max-w-7xl px-5 py-10">
+        <div class="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center md:gap-8">
+          <div>
+            <div class="max-w-prose md:max-w-none">
+              <Heading level={2}>私について</Heading>
+
+              <p class="mt-4 text-pretty text-gray-700">
+                1993年生まれ。埼玉県出身のフロントエンドエンジニアで二児の父です。<br />
+                2014年からフロントエンドエンジニアとしてのキャリアをスタートし、これまでに多くのWebサイト制作に携わってきました。<br
+                />
+                得意とするのは、HTML/CSS/JavaScript(TypeScript)を用いたコーディング、Reactを中心としたフレームワーク開発、アクセシビリティ対応です。<br
+                />
+                ユーザー体験を重視したパフォーマンスの最適化、クリーンでメンテナブルなコードを書くことを心がけています。
+              </p>
+
+              <div class="mt-6">
+                <a
+                  href="https://github.com/y-endo"
+                  target="_blank"
+                  class="inline-flex items-center justify-center rounded-full border border-black px-2.5 py-0.5 text-black"
+                >
+                  <img src="/assets/images/icon-github.svg" alt="" class="w-4" />
+                  <p class="pl-1 text-sm whitespace-nowrap">GitHub</p>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <img src="/assets/images/image-profile.jpg" class="rounded" alt="Yuki Endoの写真" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="Career">
+      <div class="mx-auto max-w-7xl px-5 py-10">
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+          <div class="col-span-1">
+            <Heading level={2}>経歴</Heading>
+            <div class="text-gray-700">
+              <p class="mt-4 text-pretty">
+                現在はアクセンチュア株式会社にて、フロントエンドエンジニアとして勤務しています。
+              </p>
+              <p class="mt-4 text-pretty">
+                数万ページの大規模サイトの設計及び実装、リニューアル、運用、CMS移行などを手掛けており、担当してきたプロジェクトではフロントエンド開発のリード経験を積んでいます。<br
+                />
+                最大で5名のマネジメントを経験しており、進捗管理やコードレビューを実施してきました。
+              </p>
+              <p class="mt-4 text-pretty">
+                大手通信会社の公式サイトで6年、官公庁サイトで4年の運用経験があり、継続的な改善を通じてユーザー体験の向上に努めています。
+              </p>
+              <p class="mt-4 text-pretty">
+                また、社内の技術共有会での発表や、フロントエンドに関する勉強会の開催なども行い、チーム全体のスキル向上にも貢献しています。
+              </p>
+            </div>
+          </div>
+
+          <div class="space-y-6">
+            <Heading level={3}>職歴</Heading>
+            <ol
+              class="relative mt-6 space-y-8 before:absolute before:-ml-px before:h-full before:w-0.5 before:rounded-full before:bg-gray-200"
+            >
+              <TimelineItem
+                period="2020/9 - 現在"
+                title="アクセンチュア株式会社"
+                description={`
+                  株式会社アイ・エム・ジェイからの転籍。<br />
+                  元々アクセンチュアの子会社であったアイ・エム・ジェイから、<br class="hidden sm:block" />
+                  2020年にアクセンチュアへの転籍する。<br />
+                  体制や案件の変化はあったが、業務内容はさほど変わらず、<br
+                    class="hidden sm:block"
+                  />直近では官公庁向けのプロジェクトを中心に従事。
+                `}
+              />
+
+              <TimelineItem
+                period="2018/4 - 2020/9"
+                title="株式会社アイ・エム・ジェイ"
+                description={`
+                  フロントエンドエンジニアとして中途入社。<br />
+                  前職よりも大規模なWebサイト制作や、チームでの開発に挑戦するため転職。<br />
+                  大手企業のコーポレートサイトやWebサービスサイトの制作・運用を担当。<br />
+                  パフォーマンス最適化やアクセシビリティ改善、CMS導入支援などにも携わる。
+                `}
+              />
+
+              <TimelineItem
+                period="2014/4 - 2018/4"
+                title="株式会社ユーティックス"
+                description={`
+                  フロントエンドエンジニアとして新卒入社。<br />
+                  LP、特設サイト、大手企業のブランドサイトを中心に<br class="hidden sm:block" />
+                  小規模〜中規模（数百ページ程度）のWebサイト制作を担当。<br />
+                  Web以外にFlashバナーやデジタルサイネージ（動画）の制作にも携わる。
+                `}
+              />
+            </ol>
+            <Heading level={3}>学歴</Heading>
+            <ol
+              class="relative mt-6 space-y-8 before:absolute before:-ml-px before:h-full before:w-0.5 before:rounded-full before:bg-gray-200"
+            >
+              <TimelineItem
+                period="2012/4 - 2014/3"
+                title="HAL東京"
+                description={`
+                  高校卒業後、HAL東京情報処理学科へ入学<br />
+                  在学中はJSPやMySQLなどバックエンド寄りの技術を学ぶが、<br class="hidden sm:block" />
+                  フロントエンドに興味を持ち始め、独学でHTML/CSS/JavaScriptを学習する。
+                `}
+              />
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="Skills">
+      <div class="mx-auto max-w-7xl px-5 py-10">
+        <Heading level={2}>スキル</Heading>
+        <Heading level={3} className="mt-6">得意</Heading>
+        <ul class="mt-6 flex flex-wrap gap-8">
+          <li><IconText iconSrc="/assets/images/logo-html.svg" text="HTML" /></li>
+          <li><IconText iconSrc="/assets/images/logo-sass.svg" text="Sass" /></li>
+          <li><IconText iconSrc="/assets/images/logo-js.svg" text="JavaScript" /></li>
+          <li><IconText iconSrc="/assets/images/logo-ts.svg" text="TypeScript" /></li>
+          <li><IconText iconSrc="/assets/images/logo-react.svg" text="React" /></li>
+          <li><IconText iconSrc="/assets/images/logo-astro.svg" text="Astro" /></li>
+          <li><IconText iconSrc="/assets/images/logo-git.svg" text="Git" /></li>
+          <li><IconText iconSrc="/assets/images/logo-gulp.svg" text="Gulp" /></li>
+          <li><IconText iconSrc="/assets/images/logo-webpack.svg" text="Webpack" /></li>
+        </ul>
+        <Heading level={3} className="mt-10">普通</Heading>
+        <ul class="mt-6 flex flex-wrap gap-8">
+          <li><IconText iconSrc="/assets/images/logo-vue.svg" text="Vue.js" /></li>
+          <li><IconText iconSrc="/assets/images/logo-tailwind.svg" text="Tailwind CSS" /></li>
+          <li><IconText iconSrc="/assets/images/logo-docker.svg" text="Docker" /></li>
+          <li><IconText iconSrc="/assets/images/logo-node.svg" text="Node.js" /></li>
+          <li><IconText iconSrc="/assets/images/logo-vite.svg" text="Vite" /></li>
+        </ul>
+        <Heading level={3} className="mt-10">初心者</Heading>
+        <ul class="mt-6 flex flex-wrap gap-8">
+          <li><IconText iconSrc="/assets/images/logo-aws.svg" text="AWS" /></li>
+          <li><IconText iconSrc="/assets/images/logo-php.svg" text="PHP" /></li>
+          <li><IconText iconSrc="/assets/images/logo-go.svg" text="Go" /></li>
+        </ul>
+        <Heading level={3} className="mt-10">操作はできる</Heading>
+        <ul class="mt-6 flex flex-wrap gap-8">
+          <li><IconText iconSrc="/assets/images/logo-figma.svg" text="Figma" /></li>
+          <li><IconText iconSrc="/assets/images/logo-photoshop.svg" text="Photoshop" /></li>
+          <li><IconText iconSrc="/assets/images/logo-xd.svg" text="XD" /></li>
+        </ul>
+      </div>
+    </section>
+    <section id="Works">
+      <div class="mx-auto max-w-7xl px-5 py-10">
+        <Heading level={2}>制作実績</Heading>
+        <Heading level={3} className="mt-6">個人制作</Heading>
+        <div class="mt-6 grid grid-cols-1 gap-10 md:grid-cols-2">
+          <Card
+            tags={['TypeScript', 'React', 'Sass']}
+            title="ひらがな学習ゲーム"
+            description={`
+              幼稚園児の息子がひらがなを遊んで覚えるために作成した学習ゲームです。<br />
+              バックエンドは使用せず、ReactとTypeScriptでフロントエンドのみを簡易的に実装しています。<br />
+              子供が好きなキャラクターが登場し、楽しみながらひらがなを学べるよう工夫しました。
+            `}
+            createdAt="2025年2月頃"
+            href="https://github.com/y-endo/poxxmon-hiragana"
+            hasGitHubLink={true}
+          />
+
+          <Card
+            tags={['TypeScript', 'Vue.js', 'Sass', 'Firebase', 'PWA']}
+            title="家計簿PWA"
+            description={`
+              自分と妻の家計簿を共有するために作成したPWAです。<br />
+              Vue.jsで画面を構築し、Firebaseをバックエンドに使用しています。<br />
+              ログイン機能、データベースを備えており、プッシュ通知を受け取るためにPWAとして実装しました。
+            `}
+            createdAt="2019年12月頃"
+            href="https://github.com/y-endo/kakeibo-vue-app"
+            hasGitHubLink={true}
+          />
+        </div>
+        <Heading level={3} className="mt-6">業務実績</Heading>
+        <div class="mt-6 grid grid-cols-1 gap-10 md:grid-cols-2">
+          <Card
+            tags={['TypeScript', 'Astro', 'Sass', 'Docker', 'ヘッドレスCMS']}
+            title="政府系サイトリニューアル・CMS移行"
+            description={`
+              数万ページ規模の静的CMSで構築されたサイトのリニューアル及びヘッドレスCMSへの移行を、フロントエンドエンジニアとして担当しました。<br/>
+              テンプレートはAstro(SSG)とTypeScriptで構築し、開発メンバーの進捗管理とコードレビューも実施しました。<br />
+              各種Lintツールを導入し、Playwrightによる自動テストで品質の維持とパフォーマンス最適化に努めました。
+            `}
+            createdAt="2025年"
+          />
+          <Card
+            tags={['JavaScript', 'Vue', 'jQuery', 'Sass', 'Docker']}
+            title="大手通信会社の公式サイト運用"
+            description={`
+              数万ページ規模の大手通信会社の公式サイトを2018年から2025年まで運用。<br />
+              フロントエンドエンジニアとして、テンプレートの作成やVue.jsを用いた特設ページの実装、既存コードの保守・改善を担当しました。<br />
+              また、アクセシビリティ対応やパフォーマンス最適化にも注力し、ユーザー体験の向上に貢献しました。<br>
+              運用上の定常業務を自動化するツールなどをNode.js等で開発し、プロジェクト全体の効率化を図りました。
+            `}
+            createdAt="2025年"
+          />
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

@@ -1,0 +1,17 @@
+---
+/**
+ * TimeLineItem
+ * 時系列表示コンポーネント
+ */
+
+const { period, title, description } = Astro.props;
+---
+
+<li class="relative -ms-1.5 flex items-start gap-4">
+  <span class="size-3 shrink-0 rounded-full bg-blue-600"></span>
+  <article class="-mt-2">
+    <span class="text-xs/none font-medium text-gray-700">{period}</span>
+    <h3 class="text-lg font-bold text-gray-900">{title}</h3>
+    <div class="mt-0.5 text-sm text-gray-700" set:html={description} />
+  </article>
+</li>
